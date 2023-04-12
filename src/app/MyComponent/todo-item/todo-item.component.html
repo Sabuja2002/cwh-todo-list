@@ -1,0 +1,16 @@
+<div class="card my-3 border border-3 border-warning" style="width: 16rem">
+  <div class="card-body bg-secondary rounded">
+    <h5 [ngClass]="{ strike: !todo.active }" class="justify-content-center text-white" >{{ todo.title }}</h5>
+    <p [ngClass]="{ strike: !todo.active }" class="text-white">{{ todo.desc }}</p><div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="exampleCheck1"
+        (click)="onCheckBoxClick(todo)"
+        [checked]="!todo.active"
+      />
+      <label class="form-check-label" for="exampleCheck1{{i}}">Mark as done</label>
+    </div>
+    <button class="btn btn-sm btn-danger" (click)="onClick(todo)">Delete</button>
+  </div>
+</div>
